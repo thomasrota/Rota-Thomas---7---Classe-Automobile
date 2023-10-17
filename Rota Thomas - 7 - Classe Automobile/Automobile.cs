@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rota_Thomas___7___Classe_Automobile
 {
-    class Automobile
+    public class Automobile
     {
         protected bool _status;
         protected int _vel;
@@ -46,6 +46,15 @@ namespace Rota_Thomas___7___Classe_Automobile
             if (status == true && marcia > 0)
             {
                 velocità += 30;
+                return 1;
+            }
+            return 0;
+        }
+        public int Frena()
+        {
+            if (status == true && marcia > 0)
+            {
+                velocità -= 30;
                 return 1;
             }
             return 0;
