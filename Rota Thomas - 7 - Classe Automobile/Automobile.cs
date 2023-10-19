@@ -3,61 +3,77 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace Rota_Thomas___7___Classe_Automobile
 {
     public class Automobile
     {
-        protected bool _status;
+        protected bool _motoreAcceso;
         protected int _vel;
         protected int _marcia;
+        protected int _giriMotore;
 
         public Automobile()
         {
-            _status = false;
+            _motoreAcceso = false;
             _vel = 0;
             _marcia = 0;
+            _giriMotore = 0;
         }
 
-        public bool status { get { return _status; } set { _status = value; } }
+        public bool motoreAcceso { get { return _motoreAcceso; } set { _motoreAcceso = value; } }
         public int velocità { get { return _vel; } set { _vel = value; } }
         public int marcia { get { return _marcia; } set { _marcia = value; } }
+        public int giriMotore { get { return _giriMotore; } set { _giriMotore = value;} }
 
-        public int AccendiAuto()
+        public void AccendiSpegniAuto()
         {
-            if (status == false)
+            if (motoreAcceso == false)
             {
-                status = true;
-                return 1;
+                motoreAcceso = true;
             }
-            return 0;
+            else
+                motoreAcceso = false;
         }
-        public int SpegniAuto()
+        public int CalcolaVelocitaDaGiriMotore()
         {
-            if (status == true)
-            {
-                status = false;
-                return 1;
-            }
-            return 0;
+            double rapportoGiriVelocita = 0.1;
+            return (int)(giriMotore * rapportoGiriVelocita);
         }
-        public int Accellera()
+        public void Accelera()
         {
-            if (status == true && marcia > 0)
+            if (motoreAcceso == true)
             {
-                velocità += 30;
-                return 1;
+                giriMotore += 500;
+                velocità = CalcolaVelocitaDaGiriMotore();
             }
-            return 0;
         }
-        public int Frena()
+        public void Frena()
         {
-            if (status == true && marcia > 0)
+            if (motoreAcceso == true)
             {
-                velocità -= 30;
-                return 1;
+                giriMotore -= 500;
+                if (giriMotore < 0)
+                {
+                    giriMotore = 0;
+                }
+                velocità = CalcolaVelocitaDaGiriMotore();
             }
-            return 0;
+        }
+        public void AumentaMarcia()
+        {
+            if (motoreAcceso == true && marcia < 6)
+            {
+                marcia++;
+            }
+        }
+        public void DiminuisciMarcia()
+        {
+            if (motoreAcceso == true && marcia > 1)
+            {
+                marcia--;
+            }
         }
     }
 }

@@ -21,16 +21,38 @@ namespace Rota_Thomas___7___Classe_Automobile
 
         private void onOff_Click(object sender, EventArgs e)
         {
-            if (Auto.status == false)
-            {
-                Auto.AccendiAuto();
+            Auto.AccendiSpegniAuto();
+            UpdateUI();
+        }
+        private void accelleratore_Click(object sender, EventArgs e)
+        {
+            Auto.Accelera();
+            MessageBox.Show($"{Auto.velocità}, {Auto.giriMotore}");
+            UpdateUI();
+        }
+        private void freno_Click(object sender, EventArgs e)
+        {
+            Auto.Frena();
+            UpdateUI();
+        }
+        private void marciaSu_Click(object sender, EventArgs e)
+        {
+            Auto.AumentaMarcia();
+            UpdateUI();
+        }
+        private void marciaGiu_Click(object sender, EventArgs e)
+        {
+            Auto.DiminuisciMarcia();
+            UpdateUI();
+        }
+        public void UpdateUI()
+        {
+            if (Auto.motoreAcceso == true)
                 labelOnOff.Text = "On";
-            }
             else
-            {
-                Auto.SpegniAuto();
                 labelOnOff.Text = "Off";
-            }
+            labelNMarce.Text = Auto.marcia.ToString();
+            labelVelocita.Text = Auto.velocità.ToString();
         }
     }
 }
