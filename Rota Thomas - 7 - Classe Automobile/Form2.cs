@@ -1,24 +1,23 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Rota_Thomas___7___Classe_Automobile
 {
-	public partial class Form1 : Form
+	public partial class Form2 : Form
 	{
-		public Automobile Auto;
-		public Form1()
+		public AutomobileAutomatica Auto;
+		public Form2()
 		{
 			InitializeComponent();
-			Auto = new Automobile();
+			Auto = new AutomobileAutomatica();
 		}
-		private void Form1_Load(object sender, EventArgs e)
-		{
-
-		}
-
 		private void onOff_Click(object sender, EventArgs e)
 		{
 			Auto.AccendiSpegniAuto();
@@ -34,21 +33,6 @@ namespace Rota_Thomas___7___Classe_Automobile
 			Auto.Frena();
 			UpdateUI();
 		}
-		private void marciaSu_Click(object sender, EventArgs e)
-		{
-			Auto.AumentaMarcia();
-			UpdateUI();
-		}
-		private void marciaGiu_Click(object sender, EventArgs e)
-		{
-			Auto.DiminuisciMarcia();
-			UpdateUI();
-		}
-		private void buttonGuidaAuto_Click(object sender, EventArgs e)
-		{
-			Form2 form2 = new Form2();
-			form2.Show();
-		}
 		public void UpdateUI()
 		{
 			if (Auto.motoreAcceso == true)
@@ -59,7 +43,7 @@ namespace Rota_Thomas___7___Classe_Automobile
 				labelNMarce.Text = "R";
 			else
 				labelNMarce.Text = Auto.marcia.ToString();
-			labelVelocita.Text = Auto.velocit�.ToString();
+			labelVelocita.Text = Auto.velocità.ToString();
 		}
 	}
 }

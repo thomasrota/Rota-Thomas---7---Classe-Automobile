@@ -1,180 +1,198 @@
 ﻿namespace Rota_Thomas___7___Classe_Automobile
 {
-    partial class Form1
-    {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class Form1
+	{
+		/// <summary>
+		///  Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		///  Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            this.accelleratore = new System.Windows.Forms.Button();
-            this.freno = new System.Windows.Forms.Button();
-            this.marciaSu = new System.Windows.Forms.Button();
-            this.marciaGiu = new System.Windows.Forms.Button();
-            this.labelMarce = new System.Windows.Forms.Label();
-            this.onOff = new System.Windows.Forms.Button();
-            this.labelOnOff = new System.Windows.Forms.Label();
-            this.labelnMarcia = new System.Windows.Forms.Label();
-            this.labelVelocita = new System.Windows.Forms.Label();
-            this.labelNMarce = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // accelleratore
-            // 
-            this.accelleratore.Location = new System.Drawing.Point(277, 405);
-            this.accelleratore.Name = "accelleratore";
-            this.accelleratore.Size = new System.Drawing.Size(90, 28);
-            this.accelleratore.TabIndex = 0;
-            this.accelleratore.Text = "Acceleratore";
-            this.accelleratore.UseVisualStyleBackColor = true;
-            this.accelleratore.Click += new System.EventHandler(this.accelleratore_Click);
-            // 
-            // freno
-            // 
-            this.freno.Location = new System.Drawing.Point(385, 405);
-            this.freno.Name = "freno";
-            this.freno.Size = new System.Drawing.Size(90, 28);
-            this.freno.TabIndex = 1;
-            this.freno.Text = "Freno";
-            this.freno.UseVisualStyleBackColor = true;
-            this.freno.Click += new System.EventHandler(this.freno_Click);
-            // 
-            // marciaSu
-            // 
-            this.marciaSu.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.marciaSu.Location = new System.Drawing.Point(533, 327);
-            this.marciaSu.Name = "marciaSu";
-            this.marciaSu.Size = new System.Drawing.Size(46, 52);
-            this.marciaSu.TabIndex = 2;
-            this.marciaSu.Text = "↑";
-            this.marciaSu.UseVisualStyleBackColor = true;
-            this.marciaSu.Click += new System.EventHandler(this.marciaSu_Click);
-            // 
-            // marciaGiu
-            // 
-            this.marciaGiu.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.marciaGiu.Location = new System.Drawing.Point(533, 381);
-            this.marciaGiu.Name = "marciaGiu";
-            this.marciaGiu.Size = new System.Drawing.Size(46, 52);
-            this.marciaGiu.TabIndex = 3;
-            this.marciaGiu.Text = "↓";
-            this.marciaGiu.UseVisualStyleBackColor = true;
-            this.marciaGiu.Click += new System.EventHandler(this.marciaGiu_Click);
-            // 
-            // labelMarce
-            // 
-            this.labelMarce.AutoSize = true;
-            this.labelMarce.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMarce.Location = new System.Drawing.Point(530, 303);
-            this.labelMarce.Name = "labelMarce";
-            this.labelMarce.Size = new System.Drawing.Size(53, 21);
-            this.labelMarce.TabIndex = 4;
-            this.labelMarce.Text = "Marce";
-            // 
-            // onOff
-            // 
-            this.onOff.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.onOff.Location = new System.Drawing.Point(534, 238);
-            this.onOff.Name = "onOff";
-            this.onOff.Size = new System.Drawing.Size(45, 49);
-            this.onOff.TabIndex = 5;
-            this.onOff.Text = "⏼";
-            this.onOff.UseVisualStyleBackColor = true;
-            this.onOff.Click += new System.EventHandler(this.onOff_Click);
-            // 
-            // labelOnOff
-            // 
-            this.labelOnOff.AutoSize = true;
-            this.labelOnOff.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelOnOff.Location = new System.Drawing.Point(599, 254);
-            this.labelOnOff.Name = "labelOnOff";
-            this.labelOnOff.Size = new System.Drawing.Size(38, 25);
-            this.labelOnOff.TabIndex = 6;
-            this.labelOnOff.Text = "Off";
-            // 
-            // labelnMarcia
-            // 
-            this.labelnMarcia.AutoSize = true;
-            this.labelnMarcia.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelnMarcia.Location = new System.Drawing.Point(585, 359);
-            this.labelnMarcia.Name = "labelnMarcia";
-            this.labelnMarcia.Size = new System.Drawing.Size(0, 32);
-            this.labelnMarcia.TabIndex = 7;
-            // 
-            // labelVelocita
-            // 
-            this.labelVelocita.AutoSize = true;
-            this.labelVelocita.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelVelocita.Location = new System.Drawing.Point(341, 240);
-            this.labelVelocita.Name = "labelVelocita";
-            this.labelVelocita.Size = new System.Drawing.Size(77, 47);
-            this.labelVelocita.TabIndex = 8;
-            this.labelVelocita.Text = "000";
-            // 
-            // labelNMarce
-            // 
-            this.labelNMarce.AutoSize = true;
-            this.labelNMarce.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelNMarce.Location = new System.Drawing.Point(599, 349);
-            this.labelNMarce.Name = "labelNMarce";
-            this.labelNMarce.Size = new System.Drawing.Size(0, 45);
-            this.labelNMarce.TabIndex = 9;
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelNMarce);
-            this.Controls.Add(this.labelVelocita);
-            this.Controls.Add(this.labelnMarcia);
-            this.Controls.Add(this.labelOnOff);
-            this.Controls.Add(this.onOff);
-            this.Controls.Add(this.labelMarce);
-            this.Controls.Add(this.marciaGiu);
-            this.Controls.Add(this.marciaSu);
-            this.Controls.Add(this.freno);
-            this.Controls.Add(this.accelleratore);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+		/// <summary>
+		///  Required method for Designer support - do not modify
+		///  the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			accelleratore=new Button();
+			freno=new Button();
+			marciaSu=new Button();
+			marciaGiu=new Button();
+			labelMarce=new Label();
+			onOff=new Button();
+			labelOnOff=new Label();
+			labelnMarcia=new Label();
+			labelVelocita=new Label();
+			labelNMarce=new Label();
+			buttonGuidaAuto=new Button();
+			SuspendLayout();
+			// 
+			// accelleratore
+			// 
+			accelleratore.Location=new Point(317, 540);
+			accelleratore.Margin=new Padding(3, 4, 3, 4);
+			accelleratore.Name="accelleratore";
+			accelleratore.Size=new Size(103, 37);
+			accelleratore.TabIndex=0;
+			accelleratore.Text="Acceleratore";
+			accelleratore.UseVisualStyleBackColor=true;
+			accelleratore.Click+=accelleratore_Click;
+			// 
+			// freno
+			// 
+			freno.Location=new Point(440, 540);
+			freno.Margin=new Padding(3, 4, 3, 4);
+			freno.Name="freno";
+			freno.Size=new Size(103, 37);
+			freno.TabIndex=1;
+			freno.Text="Freno";
+			freno.UseVisualStyleBackColor=true;
+			freno.Click+=freno_Click;
+			// 
+			// marciaSu
+			// 
+			marciaSu.Font=new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+			marciaSu.Location=new Point(609, 436);
+			marciaSu.Margin=new Padding(3, 4, 3, 4);
+			marciaSu.Name="marciaSu";
+			marciaSu.Size=new Size(53, 69);
+			marciaSu.TabIndex=2;
+			marciaSu.Text="↑";
+			marciaSu.UseVisualStyleBackColor=true;
+			marciaSu.Click+=marciaSu_Click;
+			// 
+			// marciaGiu
+			// 
+			marciaGiu.Font=new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+			marciaGiu.Location=new Point(609, 508);
+			marciaGiu.Margin=new Padding(3, 4, 3, 4);
+			marciaGiu.Name="marciaGiu";
+			marciaGiu.Size=new Size(53, 69);
+			marciaGiu.TabIndex=3;
+			marciaGiu.Text="↓";
+			marciaGiu.UseVisualStyleBackColor=true;
+			marciaGiu.Click+=marciaGiu_Click;
+			// 
+			// labelMarce
+			// 
+			labelMarce.AutoSize=true;
+			labelMarce.Font=new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			labelMarce.Location=new Point(606, 404);
+			labelMarce.Name="labelMarce";
+			labelMarce.Size=new Size(66, 28);
+			labelMarce.TabIndex=4;
+			labelMarce.Text="Marce";
+			// 
+			// onOff
+			// 
+			onOff.Font=new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+			onOff.Location=new Point(610, 317);
+			onOff.Margin=new Padding(3, 4, 3, 4);
+			onOff.Name="onOff";
+			onOff.Size=new Size(51, 65);
+			onOff.TabIndex=5;
+			onOff.Text="\u23fc";
+			onOff.UseVisualStyleBackColor=true;
+			onOff.Click+=onOff_Click;
+			// 
+			// labelOnOff
+			// 
+			labelOnOff.AutoSize=true;
+			labelOnOff.Font=new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			labelOnOff.Location=new Point(685, 339);
+			labelOnOff.Name="labelOnOff";
+			labelOnOff.Size=new Size(48, 32);
+			labelOnOff.TabIndex=6;
+			labelOnOff.Text="Off";
+			// 
+			// labelnMarcia
+			// 
+			labelnMarcia.AutoSize=true;
+			labelnMarcia.Font=new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+			labelnMarcia.Location=new Point(669, 479);
+			labelnMarcia.Name="labelnMarcia";
+			labelnMarcia.Size=new Size(0, 41);
+			labelnMarcia.TabIndex=7;
+			// 
+			// labelVelocita
+			// 
+			labelVelocita.AutoSize=true;
+			labelVelocita.Font=new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
+			labelVelocita.Location=new Point(390, 320);
+			labelVelocita.Name="labelVelocita";
+			labelVelocita.Size=new Size(97, 60);
+			labelVelocita.TabIndex=8;
+			labelVelocita.Text="000";
+			// 
+			// labelNMarce
+			// 
+			labelNMarce.AutoSize=true;
+			labelNMarce.Font=new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+			labelNMarce.Location=new Point(685, 465);
+			labelNMarce.Name="labelNMarce";
+			labelNMarce.Size=new Size(0, 54);
+			labelNMarce.TabIndex=9;
+			// 
+			// buttonGuidaAuto
+			// 
+			buttonGuidaAuto.Location=new Point(738, 559);
+			buttonGuidaAuto.Name="buttonGuidaAuto";
+			buttonGuidaAuto.Size=new Size(164, 29);
+			buttonGuidaAuto.TabIndex=10;
+			buttonGuidaAuto.Text="Guida Automatica";
+			buttonGuidaAuto.UseVisualStyleBackColor=true;
+			buttonGuidaAuto.Click+=buttonGuidaAuto_Click;
+			// 
+			// Form1
+			// 
+			AutoScaleDimensions=new SizeF(8F, 20F);
+			AutoScaleMode=AutoScaleMode.Font;
+			ClientSize=new Size(914, 600);
+			Controls.Add(buttonGuidaAuto);
+			Controls.Add(labelNMarce);
+			Controls.Add(labelVelocita);
+			Controls.Add(labelnMarcia);
+			Controls.Add(labelOnOff);
+			Controls.Add(onOff);
+			Controls.Add(labelMarce);
+			Controls.Add(marciaGiu);
+			Controls.Add(marciaSu);
+			Controls.Add(freno);
+			Controls.Add(accelleratore);
+			Margin=new Padding(3, 4, 3, 4);
+			Name="Form1";
+			Text="Form1";
+			Load+=Form1_Load;
+			ResumeLayout(false);
+			PerformLayout();
+		}
 
-        }
+		#endregion
 
-        #endregion
-
-        private Button accelleratore;
-        private Button freno;
-        private Button marciaSu;
-        private Button marciaGiu;
-        private Label labelMarce;
-        private Button onOff;
-        private Label labelOnOff;
-        private Label labelnMarcia;
-        private Label labelVelocita;
-        private Label labelNMarce;
-    }
+		private Button accelleratore;
+		private Button freno;
+		private Button marciaSu;
+		private Button marciaGiu;
+		private Label labelMarce;
+		private Button onOff;
+		private Label labelOnOff;
+		private Label labelnMarcia;
+		private Label labelVelocita;
+		private Label labelNMarce;
+		private Button buttonGuidaAuto;
+	}
 }

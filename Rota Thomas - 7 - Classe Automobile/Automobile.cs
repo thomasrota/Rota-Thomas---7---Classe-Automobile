@@ -42,7 +42,7 @@ namespace Rota_Thomas___7___Classe_Automobile
             else
                 motoreAcceso = false;
         }
-        public void Accelera()
+        public virtual void Accelera()
         {
 	        if (motoreAcceso && marcia > 0 && velocità < rap[1, marcia])
 	        {
@@ -55,7 +55,7 @@ namespace Rota_Thomas___7___Classe_Automobile
 		        velocità = CalcolaVelocita();
 	        }
 		}
-        public void Frena()
+        public virtual void Frena()
         {
 	        if (motoreAcceso && marcia > 1 && velocità > rap[1, marcia - 1])
 	        {
@@ -134,5 +134,30 @@ namespace Rota_Thomas___7___Classe_Automobile
 	        }
 	        return (int)(velocità / 3.6 * rapT * 60);
         }
+	}
+
+    public class AutomobileAutomatica : Automobile
+    {
+	    public AutomobileAutomatica()
+	    {
+			_motoreAcceso = false;
+			_vel = 0;
+			_marcia = 0;
+			_giriMotore = 0;
+		}
+	    public void CambioAutomatico()
+	    {
+		    if (motoreAcceso && marcia < 6 && velocità > rap[1, marcia])
+		    {
+				marcia++;
+				giriMotore = CalcolaGiriMotore();
+			}
+
+		    if (motoreAcceso && marcia > 0 && velocità < rap[1, marcia - 1])
+		    {
+				marcia--;
+				giriMotore = CalcolaGiriMotore();
+			}
+		}
 	}
 }
