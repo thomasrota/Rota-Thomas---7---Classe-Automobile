@@ -14,7 +14,13 @@ namespace Rota_Thomas___7___Classe_Automobile
         protected int _marcia;
         protected int _giriMotore;
 
-        public Automobile()
+        public double[,] rap = new double[,]
+        {
+	        { 4, 3.5, 2.5, 1.8, 1.3, 1.0, 0.8 },
+	        { 20, 20, 40, 60, 90, 130, 180 },
+        };
+
+		public Automobile()
         {
             _motoreAcceso = false;
             _vel = 0;
@@ -36,44 +42,97 @@ namespace Rota_Thomas___7___Classe_Automobile
             else
                 motoreAcceso = false;
         }
-        public int CalcolaVelocitaDaGiriMotore()
-        {
-            double rapportoGiriVelocita = 0.1;
-            return (int)(giriMotore * rapportoGiriVelocita);
-        }
         public void Accelera()
         {
-            if (motoreAcceso == true)
-            {
-                giriMotore += 500;
-                velocità = CalcolaVelocitaDaGiriMotore();
-            }
-        }
+	        if (motoreAcceso && marcia > 0 && velocità < rap[1, marcia])
+	        {
+		        giriMotore += 500;
+		        velocità = CalcolaVelocita();
+	        }
+	        if (motoreAcceso && marcia == -1 && velocità < rap[1, 0])
+	        {
+		        giriMotore += 500;
+		        velocità = CalcolaVelocita();
+	        }
+		}
         public void Frena()
         {
-            if (motoreAcceso == true)
-            {
-                giriMotore -= 500;
-                if (giriMotore < 0)
-                {
-                    giriMotore = 0;
-                }
-                velocità = CalcolaVelocitaDaGiriMotore();
-            }
-        }
+	        if (motoreAcceso && marcia > 1 && velocità > rap[1, marcia - 1])
+	        {
+		        giriMotore -= 500;
+		        velocità = CalcolaVelocita();
+	        }
+	        if (motoreAcceso && marcia == -1)
+	        {
+		        giriMotore -= 500;
+		        if (giriMotore < 0)
+			        giriMotore = 0;
+		        velocità = CalcolaVelocita();
+	        }
+	        if (motoreAcceso && marcia == 1 && velocità > 0)
+	        {
+		        giriMotore -= 500;
+		        if (giriMotore < 0)
+			        giriMotore = 0;
+		        velocità = CalcolaVelocita();
+	        }
+		}
         public void AumentaMarcia()
         {
-            if (motoreAcceso == true && marcia < 6)
-            {
-                marcia++;
-            }
-        }
+	        if (motoreAcceso && marcia < 6)
+	        {
+		        marcia++;
+		        giriMotore = CalcolaGiriMotore();
+	        }
+		}
         public void DiminuisciMarcia()
         {
-            if (motoreAcceso == true && marcia > 1)
-            {
-                marcia--;
-            }
+	        if (motoreAcceso && marcia > -1)
+	        {
+		        if (marcia == 1)
+		        {
+			        if (velocità != 0)
+			        {
+				        return;
+			        }
+			        else
+			        {
+				        marcia--;
+				        return;
+			        }
+		        }
+		        if (marcia > 1 && velocità <= rap[1, marcia - 1] || marcia == 0)
+		        {
+			        marcia--;
+			        giriMotore = CalcolaGiriMotore();
+		        }
+	        }
+		}
+        public int CalcolaVelocita()
+        {
+	        double rapT;
+	        if (marcia == -1)
+	        {
+		        rapT = rap[0, 0];
+	        }
+	        else
+	        {
+		        rapT = rap[0, marcia];
+	        }
+	        return (int)(giriMotore / (rapT * 60) * 3.6);
         }
-    }
+        public int CalcolaGiriMotore()
+        {
+	        double rapT;
+	        if (marcia == -1)
+	        {
+		        rapT = rap[0, 0];
+	        }
+	        else
+	        {
+		        rapT = rap[0, marcia];
+	        }
+	        return (int)(velocità / 3.6 * rapT * 60);
+        }
+	}
 }

@@ -27,7 +27,6 @@ namespace Rota_Thomas___7___Classe_Automobile
         private void accelleratore_Click(object sender, EventArgs e)
         {
             Auto.Accelera();
-            MessageBox.Show($"{Auto.velocità}, {Auto.giriMotore}");
             UpdateUI();
         }
         private void freno_Click(object sender, EventArgs e)
@@ -51,7 +50,10 @@ namespace Rota_Thomas___7___Classe_Automobile
                 labelOnOff.Text = "On";
             else
                 labelOnOff.Text = "Off";
-            labelNMarce.Text = Auto.marcia.ToString();
+            if (Auto.marcia == -1)
+				labelNMarce.Text = "R";
+			else
+				labelNMarce.Text = Auto.marcia.ToString();
             labelVelocita.Text = Auto.velocità.ToString();
         }
     }
