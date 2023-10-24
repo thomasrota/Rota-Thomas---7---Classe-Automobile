@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
@@ -22,10 +23,10 @@ namespace Rota_Thomas___7___Classe_Automobile
 
 		public Automobile()
         {
-            _motoreAcceso = false;
-            _vel = 0;
-            _marcia = 0;
-            _giriMotore = 0;
+            motoreAcceso = false;
+            velocità = 0;
+            marcia = 0;
+            giriMotore = 0;
         }
 
         public bool motoreAcceso { get { return _motoreAcceso; } set { _motoreAcceso = value; } }
@@ -138,26 +139,33 @@ namespace Rota_Thomas___7___Classe_Automobile
 
     public class AutomobileAutomatica : Automobile
     {
-	    public AutomobileAutomatica()
+	    public AutomobileAutomatica() : base()
 	    {
-			_motoreAcceso = false;
-			_vel = 0;
-			_marcia = 0;
-			_giriMotore = 0;
+			
 		}
-	    public void CambioAutomatico()
-	    {
-		    if (motoreAcceso && marcia < 6 && velocità > rap[1, marcia])
-		    {
-				marcia++;
-				giriMotore = CalcolaGiriMotore();
-			}
+		public override void Accelera()
+		{
+			base.Accelera();
+			CambioAutomatico();
+        }
+        public override void Frena()
+        {
+            base.Frena();
+			CambioAutomatico();
+        }
+        public void CambioAutomatico()
+		{
+            if (motoreAcceso && marcia < 6 && velocità > rap[1, marcia - 1])
+            {
+				AumentaMarcia();
+                giriMotore = CalcolaGiriMotore();
+            }
 
-		    if (motoreAcceso && marcia > 0 && velocità < rap[1, marcia - 1])
-		    {
-				marcia--;
-				giriMotore = CalcolaGiriMotore();
-			}
-		}
-	}
+            if (motoreAcceso && marcia > -1 && velocità < rap[1, marcia])
+			{
+                DiminuisciMarcia();
+                giriMotore = CalcolaGiriMotore();
+            }
+        }
+    }
 }

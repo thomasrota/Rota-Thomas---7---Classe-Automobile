@@ -25,12 +25,19 @@ namespace Rota_Thomas___7___Classe_Automobile
 		}
 		private void accelleratore_Click(object sender, EventArgs e)
 		{
+			if (Auto.marcia == 0 && Auto.motoreAcceso)
+				Auto.marcia = 1;
 			Auto.Accelera();
 			UpdateUI();
 		}
 		private void freno_Click(object sender, EventArgs e)
 		{
-			Auto.Frena();
+			/*if (Auto.marcia == 0 && Auto.motoreAcceso)
+			{
+                Auto.marcia = -1;
+				return;
+            }*/
+            Auto.Frena();
 			UpdateUI();
 		}
 		public void UpdateUI()
