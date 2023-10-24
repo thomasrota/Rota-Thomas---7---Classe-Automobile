@@ -32,11 +32,6 @@ namespace Rota_Thomas___7___Classe_Automobile
 		}
 		private void freno_Click(object sender, EventArgs e)
 		{
-			/*if (Auto.marcia == 0 && Auto.motoreAcceso)
-			{
-                Auto.marcia = -1;
-				return;
-            }*/
             Auto.Frena();
 			UpdateUI();
 		}

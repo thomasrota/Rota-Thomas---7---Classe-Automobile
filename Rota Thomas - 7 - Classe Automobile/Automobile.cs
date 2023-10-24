@@ -151,20 +151,22 @@ namespace Rota_Thomas___7___Classe_Automobile
         public override void Frena()
         {
             base.Frena();
-			CambioAutomatico();
+            CambioAutomatico();
         }
         public void CambioAutomatico()
 		{
-            if (motoreAcceso && marcia < 6 && velocità > rap[1, marcia - 1])
+            if (motoreAcceso)
             {
-				AumentaMarcia();
-                giriMotore = CalcolaGiriMotore();
-            }
-
-            if (motoreAcceso && marcia > -1 && velocità < rap[1, marcia])
-			{
-                DiminuisciMarcia();
-                giriMotore = CalcolaGiriMotore();
+                if (motoreAcceso && marcia < 6 && velocità > rap[1, marcia])
+                {
+                    AumentaMarcia();
+                    giriMotore = CalcolaGiriMotore();
+                }
+                if (motoreAcceso && marcia > 0 && velocità < rap[1, marcia])
+                {
+					DiminuisciMarcia();
+                    giriMotore = CalcolaGiriMotore();
+                }
             }
         }
     }
