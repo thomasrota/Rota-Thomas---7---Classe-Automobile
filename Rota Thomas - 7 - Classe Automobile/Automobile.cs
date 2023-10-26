@@ -28,6 +28,13 @@ namespace Rota_Thomas___7___Classe_Automobile
             marcia = 0;
             giriMotore = 0;
         }
+        public Automobile(Automobile Autob)
+        {
+            motoreAcceso = Autob.motoreAcceso;
+            velocità = Autob.velocità;
+            marcia = Autob.marcia;
+            giriMotore = Autob.giriMotore;
+        }
 
         public bool motoreAcceso { get { return _motoreAcceso; } set { _motoreAcceso = value; } }
         public int velocità { get { return _vel; } set { _vel = value; } }
@@ -143,6 +150,13 @@ namespace Rota_Thomas___7___Classe_Automobile
 	    {
 			
 		}
+		public AutomobileAutomatica (AutomobileAutomatica AutoAb) : base()
+		{
+            motoreAcceso = AutoAb.motoreAcceso;
+            velocità = AutoAb.velocità;
+            marcia = AutoAb.marcia;
+            giriMotore = AutoAb.giriMotore;
+        }
 		public override void Accelera()
 		{
 			base.Accelera();
